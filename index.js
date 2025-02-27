@@ -75,11 +75,27 @@ const movies = [
 
 // Use the native filter method to return a new array of only the movies that came out in the 1960s
 
+let filteredMovies = movies.filter(movie => movie.year >= 1960 && movie.year <= 1969)
+
+console.log(filteredMovies)
+
 // Use the native filter method to return a new array of any movies with an actor who's first name
     // begins with 'J'
 
-// Use the native map method to return a new array of only the film's directors
+    let filteredActors = movies.filter(function(movies){
+        let cast = movies.cast
+        for(let i = 0; i < cast.length; i++){
+            if(cast[i].name[0] === 'J')
+            return cast[i].name
+        }
+    }
+    )
 
+console.log(filteredActors)
+// Use the native map method to return a new array of only the film's directors
+let directors = movies.map(movie => movie.director)
+
+console.log(directors)
 // Use the native map method to return a new array of strings of the film's titles and lead actor
 /*
 example output:
